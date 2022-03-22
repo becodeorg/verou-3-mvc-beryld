@@ -18,6 +18,7 @@ class Article
 
     public function formatPublishDate($format = 'DD-MM-YYYY')
     {
+
         // TODO: return the date in the required format
     }
 }
