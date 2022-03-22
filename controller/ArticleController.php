@@ -5,12 +5,12 @@ declare(strict_types=1);
 
 class ArticleController
 {
-//    private DatabaseManager $databaseManager;
+    private DatabaseManager $databaseManager;
 //
-//    public function __construct(DatabaseManager $databaseManager)
-//    {
-//        $this->databaseManager = $databaseManager;
-//    }
+    public function __construct(DatabaseManager $databaseManager)
+    {
+        $this->databaseManager = $databaseManager;
+    }
 
     public function index()
     {
