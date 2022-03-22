@@ -12,7 +12,9 @@ require 'Model/Article.php';
 //include all your controllers here
 require 'Controller/HomepageController.php';
 require 'Controller/ArticleController.php';
-
+require_once 'Controller/databaseManager.php';
+$databaseManager = new databaseManager('localhost', 'root', '', 'times_paper');
+$databaseManager->connect();
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)
 $page = $_GET['page'] ?? null;
@@ -20,13 +22,15 @@ $page = $_GET['page'] ?? null;
 // Load the controller
 // It will *control* the rest of the work to load the page
 switch ($page) {
-    case 'articles-index':
+    case 'articles':
         // This is shorthand for:
         // $articleController = new ArticleController;
         // $articleController->index();
-        (new ArticleController())->index();
+        (new ArticleController($databaseManager))->index();
         break;
     case 'articles-show':
+        (new ArticleController())->show();
+        break;
         // TODO: detail page
     case 'home':
     default:
