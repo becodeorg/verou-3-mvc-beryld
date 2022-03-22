@@ -23,9 +23,8 @@ class Article
         $date = $this->publishDate;
         $newDate = date("d-m-Y", strtotime($date));
         return "$newDate";
-//        return $date;
-        // TODO: return the date in the required format
+
         // transform from us to correct one -
     }
-//    public function
+
 }

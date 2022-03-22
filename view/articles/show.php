@@ -9,9 +9,12 @@
         <p><?= $articles[$_GET['id']-1]->description ?></p>
 
 
-        <?php // TODO: links to next and previous ?>
-        <a href="#">Previous article</a>
-        <a href="#">Next article</a>
+        <?php // TODO: links to next and previous
+        echo($articles[$_GET['id']-1]->id); ?>
+        <?php //TODO: NEED THE CNODITIONS IF UNDER 0
+        // ?>
+        <a href="index.php?page=articles-show&id=<?php echo($articles[$_GET['id']-2]->id) ?>">Previous article</a>
+        <a href="index.php?page=articles-show&id=<?php echo($articles[$_GET['id']+1]->id) ?>">Next article</a>
     </section>
 
 <?php require 'View/includes/footer.php'?>
