@@ -40,12 +40,25 @@ class ArticleController
             $articles[] = new Article($rawArticle['id'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
             //this array has all in the form of models now
         }
-        var_dump($articles);
+//        var_dump($articles);
         return $articles;
     }
 
     public function show()
     {
-//        $databaseManager =
+        $articles = $this->getArticles();
+//        var_dump($articles);
+        require "view/articles/show.php";
+        return $articles;
+//        $query = "SELECT * FROM articles";
+//        $rawArticles = $this->databaseManager->connection->query($query)->fetchAll();
+
+
+
+
+//        return $rawArticles;
+
+
+
     }
 }
