@@ -37,7 +37,7 @@ class ArticleController
         $articles = [];
         foreach ($rawArticles as $rawArticle) {
             // We are converting an article from a "dumb" array to a much more flexible class
-            $articles[] = new Article($rawArticle['id'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
+            $articles[] = new Article($rawArticle['id']-1, $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
             //this array has all in the form of models now
         }
 //        var_dump($articles);
